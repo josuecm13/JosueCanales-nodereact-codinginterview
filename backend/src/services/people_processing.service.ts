@@ -8,4 +8,10 @@ export class PeopleProcessing {
     getAll() {
         return people_data;
     }
+
+    getByPage(page: number, limit: number) {
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+        return people_data.slice(startIndex, endIndex);
+    }
 }
